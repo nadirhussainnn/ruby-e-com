@@ -1,7 +1,7 @@
 /* app/assets/stylesheets/application.css */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  padding: 1rem;
+  margin: 0;
 }
 
 nav {
@@ -9,8 +9,6 @@ nav {
   display: flex;
   font-size: 0.875em;
   gap: 0.5rem;
-  max-width: 1024px;
-  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -42,4 +40,71 @@ section.product img {
   border-radius: 8px;
   flex-basis: 50%;
   max-width: 50%;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.navbar__actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar__link {
+  font-weight: 700;
+  text-decoration: none;
+  color: #1d4ed8;
+}
+
+.navbar__form {
+  margin: 0;
+}
+
+.navbar__button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.navbar__button:hover {
+  background: #dc2626;
+}
+
+
+/* ---------- Forms ---------- */
+form > div {
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+input[type="submit"] {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #1d4ed8;
 }

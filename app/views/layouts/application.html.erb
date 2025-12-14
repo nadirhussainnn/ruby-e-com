@@ -26,10 +26,23 @@
   <body>
     <div class="notice"><%= flash[:notice] %></div>
     <div class="alert"><%= flash[:alert] %></div>
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
-    </nav>
+
+    <header class="navbar">
+    <div class="navbar__container">
+
+      <nav class="navbar__actions">
+        <%= link_to "Home", root_path, class: "navbar__link" %>
+
+        <% if authenticated? %>
+          <%= button_to "Log out",
+                session_path,
+                method: :delete,
+                class: "navbar__button",
+                form_class: "navbar__form" %>
+        <% end %>
+      </nav>
+    </div>
+  </header>
 
     <main>
       <%= yield %>

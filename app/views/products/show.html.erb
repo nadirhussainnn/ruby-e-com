@@ -1,4 +1,4 @@
-<p><%= link_to "Back", products_path %></p>
+<p class="back-link"><%= link_to "Back", products_path %></p>
 
 <section class="product">
   <%= image_tag @product.featured_image if @product.featured_image.attached? %>
@@ -12,8 +12,10 @@
     <%= render "inventory", product: @product %>
 
     <% if authenticated? %>
-      <%= link_to "Edit", edit_product_path(@product) %>
-      <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <div class="product__actions">
+      <%= link_to "Edit", edit_product_path(@product), class: "product__actions_btn" %>
+      <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "product__actions_btn_delete" %>
+    </div>
     <% end %>
   </section>
 </section>

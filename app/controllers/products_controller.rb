@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   around_action :switch_locale
 
   def index
-    @products = Product.all
+    # Sending products with image eager loading to avoid N+1 queries
+    @products = Product.with_attached_featured_image.all
   end
 
   def show
