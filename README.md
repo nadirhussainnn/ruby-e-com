@@ -1,17 +1,24 @@
-# ruby-e-com
-This app is created as part of the course work "Frameworks for Rapid Application development" course.
+# README
 
-## How to run?
-- Install ruby >= 3.4.7
-- Install rails >= 8.1.1
-- Then clone this repo, go inside store folder
-- Run `bundle install` to install all gems required for this project
-- Run `bin/rails server` to start server
-- Visit `http://127.0.0.1:3000`
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# To activate rails console
-- `bin/rails console`
+Things you may want to cover:
 
-# Creating tables and running migrations
-- `bin/rails generate model Product name:string`
-- `bin/rails db:migrate`
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
