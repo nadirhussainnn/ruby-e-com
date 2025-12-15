@@ -1,11 +1,54 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div class="auth-layout">
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+  <!-- Left image / branding -->
+  <div class="auth-image">
+    <div class="auth-image-content">
+      <h2>Welcome back 👋</h2>
+      <p>Manage your products, inventory, and orders easily.</p>
+    </div>
+  </div>
 
-<%= link_to "Forgot password?", new_password_path %>
+  <!-- Right login form -->
+  <div class="auth-form-wrapper">
+    <div class="auth-card">
+
+      <% if flash[:alert] %>
+        <div class="flash flash-error"><%= flash[:alert] %></div>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <div class="flash flash-success"><%= flash[:notice] %></div>
+      <% end %>
+
+      <h1 class="auth-title">Sign in</h1>
+
+      <%= form_with url: session_path, class: "auth-form" do |form| %>
+        <div class="form-group">
+          <%= form.email_field :email_address,
+                required: true,
+                autofocus: true,
+                autocomplete: "username",
+                placeholder: "Email address",
+                class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.password_field :password,
+                required: true,
+                autocomplete: "current-password",
+                placeholder: "Password",
+                maxlength: 72,
+                class: "form-input" %>
+        </div>
+
+        <%= form.submit "Sign in", class: "btn-primary" %>
+      <% end %>
+
+      <div class="auth-footer">
+        <%= link_to "Forgot password?", new_password_path %>
+      </div>
+
+    </div>
+  </div>
+
+</div>
